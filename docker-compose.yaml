@@ -1,0 +1,73 @@
+version: '3'
+
+networks:
+  devops:
+    driver: bridge
+
+services:
+  zookeeper-server:
+    image: zookeeper:v1.0.0
+    container_name: zookeeper
+    env_file: zookeeper/environment.env
+    build:
+        context: ./zookeeper
+        dockerfile: Dockerfile
+    ports:
+      - '2181:2181'
+    networks:
+      - devops
+      
+  kafka-server:
+    image: kafka:v1.0.0
+    container_name: kafka
+    env_file: kafka/environment.env
+    build:
+        context: ./kafka
+        dockerfile: Dockerfile
+    ports:
+      - '9093:9093'
+    networks:
+      - devops
+    restart: on-failure
+    depends_on:
+      - zookeeper-server
+      
+  kafka-conector:
+    image: kafka-conector:v1.0.0
+    container_name: kafka-conector
+    build:
+        context: ./kafkaconector
+        dockerfile: Dockerfile
+    networks:
+      - devops
+    depends_on:
+      - kafka-server
+      
+  kafka-producer:
+    image: kafka-producer:v1.0.0
+    container_name: kafka-producer
+    build:
+        context: ./kafkaproducer
+        dockerfile: Dockerfile
+    ports:
+      - '30000:8080'
+    networks:
+      - devops
+    depends_on:
+      - kafka-server
+      - kafka-conector
+      
+  kafka-consumer:
+    image: kafka-consumer:v1.0.0
+    container_name: kafka-consumer
+    build:
+        context: ./kafkaconsumer
+        dockerfile: Dockerfile
+    ports:
+      - '30001:8081'
+    networks:
+      - devops
+    depends_on:
+      - kafka-server
+      - kafka-conector
+      - kafka-producer
