@@ -4,9 +4,10 @@ This is a simply project for implementing pub/sub pattern using Kafka running in
 
 ## Structure
 
-* **zookeeper**: it contains the Dockerfile and the environment.env for Zookeeper container.
+* **zookeeper**: it contains the Dockerfile and the environment.env for Zookeeper container. Image from [bitnami/kafka
+](https://hub.docker.com/r/bitnami/kafka/).
 
-* **kafka**: it contains the Dockerfile and the environment.env for Kafka container.
+* **kafka**: it contains the Dockerfile and the environment.env for Kafka container. Image from [bitnami/zookeeper](https://hub.docker.com/r/bitnami/zookeeper/).
 
 * **kafkaconector**: it contains a SpringBoot project that creates a topic to be used by the producer and consumer.
 
@@ -19,7 +20,7 @@ SpringBoot projects have been created using [Spring Initializr](https://start.sp
 ## docker-compose
 The *docker-compose.yaml* specifies all services' configurations.
 
-For launched all containers just run
+For launch all containers just run
  `docker-compose up --build -d`
 
 ## Sources
