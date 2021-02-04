@@ -4,10 +4,9 @@ This is a simply project for implementing pub/sub pattern using Kafka running in
 
 ## Structure
 
-* **zookeeper**: it contains the Dockerfile and the environment.env for Zookeeper container. Image from [bitnami/kafka
-](https://hub.docker.com/r/bitnami/kafka/).
+* **zookeeper**: it contains the Dockerfile and the environment.env for Zookeeper container.
 
-* **kafka**: it contains the Dockerfile and the environment.env for Kafka container. Image from [bitnami/zookeeper](https://hub.docker.com/r/bitnami/zookeeper/).
+* **kafka**: it contains the Dockerfile and the environment.env for Kafka container.
 
 * **kafkaconector**: it contains a SpringBoot project that creates a topic to be used by the producer and consumer.
 
@@ -21,13 +20,17 @@ SpringBoot projects have been created using [Spring Initializr](https://start.sp
 The *docker-compose.yaml* specifies all services' configurations.
 
 For launch all containers just run
- `docker-compose up --build -d`
+ `docker-compose up --build -d`.
 
 ## Sources
-[Intro to Apache Kafka with Spring](https://www.baeldung.com/spring-kafka, "Baeldung")
+Kafka image from [bitnami/kafka](https://hub.docker.com/r/bitnami/kafka/).
 
-[Using Kafka with Spring Boot](https://reflectoring.io/spring-boot-kafka/, "Reflectoring")
+Zookeeper image from [bitnami/zookeeper](https://hub.docker.com/r/bitnami/zookeeper/).
 
-[Kafka - Introduction to Kafka Admin API](https://www.logicbig.com/tutorials/misc/kafka/admin-api-getting-started.html, "Logicbig")
+[Intro to Apache Kafka with Spring](https://www.baeldung.com/spring-kafka, "Baeldung").
 
-[Spring Kafka The class is not in the trusted packages](https://www.logicbig.com/tutorials/misc/kafka/admin-api-getting-started.html, "Stackoverflow")
+[Using Kafka with Spring Boot](https://reflectoring.io/spring-boot-kafka/, "Reflectoring").
+
+[Kafka - Introduction to Kafka Admin API](https://www.logicbig.com/tutorials/misc/kafka/admin-api-getting-started.html, "Logicbig").
+
+[Spring Kafka The class is not in the trusted packages](https://www.logicbig.com/tutorials/misc/kafka/admin-api-getting-started.html, "Stackoverflow").
