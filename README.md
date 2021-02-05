@@ -27,10 +27,10 @@ Kafka image from [bitnami/kafka](https://hub.docker.com/r/bitnami/kafka/).
 
 Zookeeper image from [bitnami/zookeeper](https://hub.docker.com/r/bitnami/zookeeper/).
 
-[Intro to Apache Kafka with Spring](https://www.baeldung.com/spring-kafka, "Baeldung").
+[Intro to Apache Kafka with Spring](https://www.baeldung.com/spring-kafka).
 
-[Using Kafka with Spring Boot](https://reflectoring.io/spring-boot-kafka/, "Reflectoring").
+[Using Kafka with Spring Boot](https://reflectoring.io/spring-boot-kafka/).
 
-[Kafka - Introduction to Kafka Admin API](https://www.logicbig.com/tutorials/misc/kafka/admin-api-getting-started.html, "Logicbig").
+[Kafka - Introduction to Kafka Admin API](https://www.logicbig.com/tutorials/misc/kafka/admin-api-getting-started.html).
 
-[Spring Kafka The class is not in the trusted packages](https://www.logicbig.com/tutorials/misc/kafka/admin-api-getting-started.html, "Stackoverflow").
+[Spring Kafka The class is not in the trusted packages](https://stackoverflow.com/questions/51688924/spring-kafka-the-class-is-not-in-the-trusted-packages).
