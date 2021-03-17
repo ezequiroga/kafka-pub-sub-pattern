@@ -16,6 +16,7 @@ services:
       - '2181:2181'
     networks:
       - devops
+    restart: always
       
   kafka-server:
     image: kafka:v1.0.0
@@ -28,7 +29,7 @@ services:
       - '9093:9093'
     networks:
       - devops
-    restart: on-failure
+    restart: always
     depends_on:
       - zookeeper-server
       
@@ -42,6 +43,7 @@ services:
       - devops
     depends_on:
       - kafka-server
+    restart: always
       
   kafka-producer:
     image: kafka-producer:v1.0.0
@@ -56,6 +58,7 @@ services:
     depends_on:
       - kafka-server
       - kafka-conector
+    restart: always
       
   kafka-consumer:
     image: kafka-consumer:v1.0.0
@@ -71,3 +74,4 @@ services:
       - kafka-server
       - kafka-conector
       - kafka-producer
+    restart: always
